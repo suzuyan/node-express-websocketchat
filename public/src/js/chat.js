@@ -3,19 +3,19 @@ $(function() {
     var socket = io.connect();
     console.log("connected", socket);
     // print joined
-    var $posts = $('ul#posts');
+    var $posts = $('div#posts');
     socket.on('login', function(data) {
-        $posts.prepend('<li>' + data + 'さんが入室しました.</li>');
+        $posts.prepend('<div class="alert alert-info mB0">' + data + 'さんが入室しました.</div>');
     });
     // print post data
-    var $message = $('input#message');
-    $('input#update').on('click', function(e) {
+    var $message = $('#message');
+    $('#update').on('click', function(e) {
         if ($message.val().length === 0) return;
         socket.emit('post', $message.val());
         $message.val('');
     });
     socket.on('post', function(data) {
         console.log(data);
-        $posts.prepend('<li>' + data.id + 'さんのコメント: ' + data.post + '</li>');
+        $posts.prepend('<div class="alert alert-success mB0">' + data.id + 'さんのコメント: ' + data.post + '</div>');
     });
 });

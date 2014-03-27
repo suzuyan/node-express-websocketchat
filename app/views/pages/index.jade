@@ -1,8 +1,13 @@
 extends ../layouts/default
 
 block content
-    h1 ws chat
-    input(id='message' type='text')
-    input(id='update' type='submit' value='コメント')
-    ul#posts
+    h1(class='mB20') WebSocket Chat
+    div(class='row')
+        div(class='col-lg-6')
+            div(class='input-group')
+                input(class='form-control', id='message', type='text')
+                span(class='input-group-btn')
+                    button(class='btn btn-default', id='update' type='button')
+                        コメント
+    div#posts
 

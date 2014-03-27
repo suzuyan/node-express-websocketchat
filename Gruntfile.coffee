@@ -13,7 +13,7 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON('package.json')
     develop:
       server:
-        file: 'app.js'
+        file: 'server.js'
     # 更新監視
     watch:
       options:

@@ -1,19 +1,19 @@
 doctype html5
-html(lang="ja")
-head
-    meta(charset="utf-8")
-    meta(name='viewport' content='width=device-width, user-scalable=no')
-    meta(name='apple-mobile-web-app-capable' content='yes')
-    title= title
-    script(src="/vendors/jquery/js/jquery.min.js")
-    script(src="/vendors/bootstrap/js/bootstrap.min.js")
-    script(src="/socket.io/socket.io.js")
-    script(src="/js/main.min.js")
-    style(src="/vendors/bootstrap/css/bootstrap-min.css")
-    style(src="/vendors/bootstrap/css/bootstrap-theme.min.css")
+html(lang='ja')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, user-scalable=no')
+        meta(name='apple-mobile-web-app-capable' content='yes')
+        title= title
+        script(src='/vendors/jquery/js/jquery.min.js')
+        script(src='/vendors/bootstrap/js/bootstrap.min.js')
+        script(src='/socket.io/socket.io.js')
+        script(src='/js/main.min.js')
+        link(href='/vendors/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+        link(href='/vendors/bootstrap/css/bootstrap-theme.min.css', rel='stylesheet')
+        link(href='/css/main.min.css', rel='stylesheet')
 
-    style
-        body {margin:0;padding:0;}
-
-body
-    block content
+    body
+        div(class='jumbotron')
+            div(class='container')
+                block content
