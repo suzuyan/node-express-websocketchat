@@ -5,5 +5,18 @@
     "**/.*",
     "node_modules",
     "components"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1"
+  },
+  "exportsOverride": {
+    "bootstrap": {
+      "js": "dist/js/*.js",
+      "fonts": "dist/fonts/*",
+      "css": "dist/css/*.css"
+    },
+    "jquery": {
+      "js": "dist/*"
+    }
+  }
 }
