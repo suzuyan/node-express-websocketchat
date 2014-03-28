@@ -2,6 +2,7 @@ nodejs-express-websocket
 ========================
 
 node.jsでwebsocketアプリを作る際のジェネラレーター
+
 node.js + express + socket.io でなんらかのサービスを作るときに使ってください m(_ _#)mペコリ
 
 ## 導入
@@ -41,7 +42,7 @@ node.js + express + socket.io でなんらかのサービスを作るときに�
                 js
                 css
         # bootstrapファイル（あまり変更することはないかな？）
-        app.js
+        server.js
 
 
 ## 外部jsライブラリを追加する場合

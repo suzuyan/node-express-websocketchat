@@ -9,7 +9,7 @@ var config = {
     app: {
       name: 'dev-websocket'
     },
-    port: 3000,
+    port: process.env.PORT || 3000,
     websocket: {
       log_level: 3
     }
@@ -26,7 +26,7 @@ var config = {
     websocket: {
       log_level: 1
     }
-  },
+  }
 };
 
 module.exports = extend(true, config['common'], config[env]);

@@ -21,7 +21,7 @@ module.exports = (grunt) ->
         livereload: reloadPort
       js:
         files: [
-          'app.js'
+          'server.js'
           'app/controllers/*.js'
           'app/models/*.js'
           'config/*.js'
