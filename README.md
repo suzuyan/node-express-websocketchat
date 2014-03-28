@@ -2,6 +2,7 @@ nodejs-express-websocket
 ========================
 
 node.jsでwebsocketアプリを作る際のジェネラレーター
+
 node.js + express + socket.io でなんらかのサービスを作るときに使ってください m(_ _#)mペコリ
 
 ## 導入
@@ -41,7 +42,7 @@ node.js + express + socket.io でなんらかのサービスを作るときに�
                 js
                 css
         # bootstrapファイル（あまり変更することはないかな？）
-        app.js
+        server.js
 
 
 ## 外部jsライブラリを追加する場合
@@ -55,12 +56,30 @@ node.js + express + socket.io でなんらかのサービスを作るときに�
 `bower_components/jquery` 以下にgit cloneしたファイルが入っているので`bower.json`の`exportsOverride`で必要なjsファイルを定義しておけばgruntがよしなにやってくれます
 
 
+## deploy
 
-## liveアップ
+
+### heroku
+
+herokuアカウントの作成, herokuコマンドのインストールなどは事前にやっておいてください。
+
+    # grunt用のbuildpackを使用する
+    heroku create MYAPP --buildpack https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt.git
+    # websocketを使用
+    heroku labs:enable websockets MYAPP
+    # 環境変数の設定
+    heroku config:set NODE_ENV=production
+    git push heroku master
+    # ブラウザ確認
+    heroku open
+
+http://node-express-websocket.herokuapp.com/
+
+
+### live環境
 
     grunt prod
-    # ↑でできたファイルを適当なdeploy toolでliveへ
-
+    # ↑でできたファイルを適当なdeploy toolでrsync
 
 
 ## TODO

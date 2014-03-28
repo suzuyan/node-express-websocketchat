@@ -21,7 +21,7 @@ module.exports = (grunt) ->
         livereload: reloadPort
       js:
         files: [
-          'app.js'
+          'server.js'
           'app/controllers/*.js'
           'app/models/*.js'
           'config/*.js'
@@ -118,7 +118,7 @@ module.exports = (grunt) ->
     ), 500
     return
 
-  # for debug
+  ## development
   grunt.registerTask 'dev', [
     'bower'
     'mkdir'
@@ -128,7 +128,7 @@ module.exports = (grunt) ->
     'develop'
     'watch'
   ]
-  # for product
+  ## production
   grunt.registerTask 'prod', [
     'bower'
     'mkdir'
@@ -137,4 +137,24 @@ module.exports = (grunt) ->
     'cssmin'
     'clean'
   ]
+
+  # for heroku
+  ## development
+  grunt.registerTask 'heroku:development', [
+    'bower'
+    'mkdir'
+    'concat'
+    'uglify'
+    'cssmin'
+  ]
+  ## production
+  grunt.registerTask 'heroku:production', [
+    'bower'
+    'mkdir'
+    'concat'
+    'uglify'
+    'cssmin'
+    'clean'
+  ]
+
   return

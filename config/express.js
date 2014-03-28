@@ -11,9 +11,9 @@ module.exports = function(app, config) {
     //app.engine('ect', ect({watch: true, root: config.root + '/app/views', ext: '.ect'}).render);
     //app.set('view engine', 'ect');
     app.set('view engine', 'jade');
-    app.use(express.logger('dev'));
-    app.use(express.bodyParser());
-    app.use(express.methodOverride());
+    //app.use(express.logger('dev'));
+    //app.use(express.bodyParser());
+    //app.use(express.methodOverride());
     app.use(app.router);
     app.use(function(req, res) {
       res.status(404).render('../errors/404', { title: '404' });
